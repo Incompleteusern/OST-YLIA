@@ -1,0 +1,78 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{epigraph}
+\usepackage[colorlinks]{hyperref}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage[headsepline]{scrlayer-scrpage}
+\usepackage{thmtools}
+\renewcommand{\epigraphsize}{\scriptsize}
+\renewcommand{\epigraphwidth}{60ex}
+\addtolength{\textheight}{3.14cm}
+\ihead{\footnotesize\textbf{DNW-vp}}
+\ohead{\footnotesize Updated Mon 6 Mar 2023 22:48:09 UTC}
+\providecommand{\clubs}[1]{$#1\clubsuit$}
+\providecommand{\ol}{\overline}
+\providecommand{\eps}{\varepsilon}
+\providecommand{\half}{\frac{1}{2}}
+\providecommand{\dang}{\measuredangle} %% Directed angle
+\providecommand{\CC}{\mathbb C}
+\providecommand{\FF}{\mathbb F}
+\providecommand{\NN}{\mathbb N}
+\providecommand{\QQ}{\mathbb Q}
+\providecommand{\RR}{\mathbb R}
+\providecommand{\ZZ}{\mathbb Z}
+\providecommand{\dg}{^\circ}
+\providecommand{\ii}{\item}
+\providecommand{\alert}{\textbf}
+% hacks for arc
+\providecommand{\tarc}{\mbox{\large$\frown$}}
+\providecommand{\arc}[1]{\stackrel{\tarc}{#1}}
+\reversemarginpar
+\providecommand{\printpuid}[1]{\marginpar{\href{https://otis.evanchen.cc/arch/#1}{\ttfamily\footnotesize\color{green!40!black}#1}}}
+
+\mdfdefinestyle{mdbluebox}{roundcorner=10pt,innerbottommargin=9pt,
+    linecolor=blue,backgroundcolor=TealBlue!5,}
+\declaretheoremstyle[headfont=\sffamily\bfseries\color{MidnightBlue},
+    mdframed={style=mdbluebox},]{thmbluebox}
+\mdfdefinestyle{mdredbox}{frametitlefont=\bfseries,innerbottommargin=8pt,
+    nobreak=true,backgroundcolor=Salmon!5,linecolor=RawSienna,}
+\declaretheoremstyle[headfont=\bfseries\color{RawSienna},
+    mdframed={style=mdredbox},headpunct={\\[3pt]},postheadspace=0pt,]{thmredbox}
+\mdfdefinestyle{mdgreenbox}{linecolor=ForestGreen,backgroundcolor=ForestGreen!5,
+    linewidth=2pt,rightline=false,leftline=true,topline=false,bottomline=false,}
+\declaretheoremstyle[headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+    mdframed={style=mdgreenbox},headpunct={ --- },]{thmgreenbox}
+\mdfdefinestyle{mdblackbox}{linecolor=black,backgroundcolor=RedViolet!5!gray!5,
+    linewidth=3pt,rightline=false,leftline=true,topline=false,bottomline=false,}
+\declaretheoremstyle[mdframed={style=mdblackbox}]{thmblackbox}
+\declaretheorem[style=thmredbox,name=Problem]{problem}
+\declaretheorem[style=thmredbox,name=Required Problem,sibling=problem]{reqproblem}
+\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=problem]{theorem}
+\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
+\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
+
+\newcommand{\club}[2]{\bgroup\color{#1}[$#2\clubsuit$]\egroup}
+\newcommand{\clubg}[1]{\club{green!40!black}{#1}}
+
+\newcommand{\goals}[2]{\bgroup
+    \sffamily\small \emph{Instructions}: Solve \clubg{#1}.
+    If you have time, solve \clubg{#2}.
+    Problems with {\color{red} red} weights are mandatory.
+    \egroup\par}
+
+\newenvironment{walkthrough}{\noindent\textbf{\color{green!40!black}Walkthrough.}}{}
+%% 
+
