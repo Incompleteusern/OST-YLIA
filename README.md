@@ -11,3 +11,6 @@ From a high point of view, the Parser chooses among a list of SubParsers to extr
 then the Writer uses that data to write the new file.
 
 This does not handle type hints or spacing well at all.
+
+Naturally, since the source this is trying to reverse engineer is closed, this is probably off in quite a few
+subtle ways.
